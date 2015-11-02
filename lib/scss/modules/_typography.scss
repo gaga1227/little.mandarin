@@ -1,0 +1,215 @@
+/*
+# typography
+** basic type module styles **
+*/
+
+// reset
+// -------------------------------------------------------------------------------------------
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+blockquote
+{
+	margin:0;
+	padding:0;
+}
+
+// headings
+// -------------------------------------------------------------------------------------------
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	margin: 0.5em 0 0.3em 0;
+	color: $black;
+	font-family: $font-family-sans-serif;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1.8em;
+
+	//info
+	.info {
+		font-size: 80%;
+		font-weight: normal;
+	}
+
+	// icon
+	>.icon {
+		display: inline-block;
+		margin: -0.2em 6px 0 0;
+		vertical-align: middle;
+	}
+}
+
+// sizes
+h1, .h1 { font-size: 42px; }
+h2, .h2 { font-size: 36px; }
+h3, .h3 { font-size: 22px; }
+h4, .h4 { font-size: 18px; }
+h5, .h5 { font-size: 14px; }
+h6, .h6 { font-size: 12px; }
+
+// paragraphs
+// -------------------------------------------------------------------------------------------
+p {
+	margin-bottom: $paragraph-margin-bottom;
+	font-size: $paragraph-font-size;
+	font-weight: $paragraph-font-weight;
+	line-height: $paragraph-line-height;
+}
+
+// horizontal rules
+// -------------------------------------------------------------------------------------------
+hr {
+	height: 0;
+	margin: 1em 0;
+	border: solid $jumbo;
+	border-width: 1px 0 0;
+	clear: both;
+
+	// invisible
+	&.invisible {
+		margin: 0;
+		height: 1em;
+		border: none;
+	}
+}
+
+// lits
+// -------------------------------------------------------------------------------------------
+
+// common lists
+ul,
+ol,
+dl {
+	font-size: 14px;
+	line-height: 1.4em;
+	margin-bottom: $list-margin-bottom;
+	list-style-position: inside;
+	font-family: $font-family-sans-serif;
+}
+
+ul {
+	margin-left: $list-side-margin;
+	&.no-bullet {
+		margin-left: $list-side-margin-no-bullet;
+		li {
+			ul,
+			ol {
+				margin-left: $list-nested-margin;
+				margin-bottom: 0;
+				list-style: none;
+			}
+		}
+	}
+}
+
+// ul lists
+ul {
+	li {
+		ul,
+		ol {
+			margin-left: $list-nested-margin;
+			margin-bottom: 0;
+		}
+	}
+	&.square,
+	&.circle,
+	&.disc {
+		li ul { list-style: inherit; }
+	}
+	&.square { list-style-type: square; margin-left: $list-side-margin;}
+	&.circle { list-style-type: circle; margin-left: $list-side-margin;}
+	&.disc { list-style-type: disc; margin-left: $list-side-margin;}
+	&.no-bullet { list-style: none; }
+}
+
+// ol lists
+ol {
+	margin-left: $list-ordered-side-margin;
+	li {
+		ul,
+		ol {
+			margin-left: $list-nested-margin;
+			margin-bottom: 0;
+		}
+	}
+}
+
+// anchor link
+// -------------------------------------------------------------------------------------------
+a {
+	color: $anchor-font-color;
+	text-decoration: underline;
+	line-height: inherit;
+
+	&:hover,
+	&:focus {
+		color: $anchor-font-color-hover;
+		text-decoration: underline;
+	}
+
+	img { border:none; }
+}
+
+// inline elements
+// -------------------------------------------------------------------------------------------
+
+em,
+i {
+	font-style: italic;
+	line-height: inherit;
+}
+
+strong,
+b {
+	font-weight: 600;
+	line-height: inherit;
+}
+
+small {
+	font-size: 80%;
+	line-height: inherit;
+}
+
+// styles classes
+// -------------------------------------------------------------------------------------------
+
+// info style
+.info {
+	color: $jumbo;
+}
+
+// footnote
+.footnote {
+	color: $jumbo;
+	font-size: 11px;
+	font-weight: normal;
+}
+
+// align classes
+// -------------------------------------------------------------------------------------------
+
+.text-left    { text-align: left !important; }
+.text-right   { text-align: right !important; }
+.text-center  { text-align: center !important; }
+.text-justify { text-align: justify !important; }
+
+// weight classes
+// -------------------------------------------------------------------------------------------
+
+.text-normal { font-weight: normal !important; }
+.text-bold   { font-weight: bold !important; }
+
+// line break classes
+// -------------------------------------------------------------------------------------------
+
+.br {
+	display: block!important;
+}

@@ -1,0 +1,41 @@
+/*
+# Fonts
+** All Web fonts **
+*/
+
+// utils
+// -------------------------------------------------------------------------------------------
+
+// returns full font file url without format extension
+@function font-url ($font-name) {
+	@return '#{$font-path}#{$font-name}';
+}
+
+// create a font-face definition
+@mixin add-font-face($font-filename, $font-family, $font-weight:400, $font-style:normal) {
+	$font-full-url: #{font-url($font-filename)};
+	@font-face {
+		font-family: '#{$font-family}';
+		src: url('#{$font-full-url}.eot');
+		src: url('#{$font-full-url}.eot?#iefix') format('embedded-opentype'),
+			 url('#{$font-full-url}.woff') format('woff'),
+			 url('#{$font-full-url}.ttf') format('truetype'),
+			 url('#{$font-full-url}.svg##{$font-filename}') format('svg');
+		font-weight: $font-weight;
+		font-style: $font-style;
+	}
+}
+
+// vars
+// -------------------------------------------------------------------------------------------
+
+// use consistent relative path for both
+// dev and build
+$font-path: '../font/';
+
+// adding fonts
+// -------------------------------------------------------------------------------------------
+
+// Antenna
+//@include add-font-face(Antenna-Light, Antenna, 300);
+
