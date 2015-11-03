@@ -1,3 +1,9 @@
+// vars
+var paths = {
+	src: 'app/src',
+	dist: 'app/dist'
+};
+
 // Include gulp
 var gulp = require('gulp');
 
@@ -13,11 +19,11 @@ var reload = browserSync.reload;
 
 // Compile Sass & auto-inject into browsers
 gulp.task('sass', function () {
-	return gulp.src('lib/scss/**/*.scss')
+	return gulp.src(paths.src + '/lib/scss/**/*.scss')
 		.pipe(sass({
 			outputStyle: 'compressed'
 		}))
-		.pipe(gulp.dest('lib/css'))
+		.pipe(gulp.dest(paths.src + '/lib/css'))
 		.pipe(reload({
 			stream: true
 		}));
@@ -25,31 +31,31 @@ gulp.task('sass', function () {
 
 // Lint Task
 gulp.task('lint', function () {
-	return gulp.src('lib/js/app/**/*.js')
+	return gulp.src(paths.src + '/lib/js/app/**/*.js')
 		.pipe(jshint())
 		.pipe(jshint.reporter('default'));
 });
 
 // Concatenate, Minify JS & auto-inject into browsers
 gulp.task('appscripts', function () {
-	return gulp.src('lib/js/app/**/*.js')
+	return gulp.src(paths.src + '/lib/js/app/**/*.js')
 		.pipe(concat('app.js'))
-		.pipe(gulp.dest('lib/js'))
+		.pipe(gulp.dest(paths.src + '/lib/js'))
 		.pipe(rename('app.min.js'))
 		.pipe(uglify())
-		.pipe(gulp.dest('lib/js'))
+		.pipe(gulp.dest(paths.src + '/lib/js'))
 		.pipe(reload({
 			stream: true
 		}));
 });
 
 gulp.task('vendorscripts', function () {
-	return gulp.src('lib/js/vendor/**/*.js')
+	return gulp.src(paths.src + '/lib/js/vendor/**/*.js')
 		.pipe(concat('vendor.js'))
-		.pipe(gulp.dest('lib/js'))
+		.pipe(gulp.dest(paths.src + '/lib/js'))
 		.pipe(rename('vendor.min.js'))
 		.pipe(uglify())
-		.pipe(gulp.dest('lib/js'))
+		.pipe(gulp.dest(paths.src + '/lib/js'))
 		.pipe(reload({
 			stream: true
 		}));
@@ -57,23 +63,23 @@ gulp.task('vendorscripts', function () {
 
 // Watch Files For Changes
 gulp.task('watch', function () {
-	gulp.watch('lib/js/app/**/*.js', ['lint', 'appscripts']);
-	gulp.watch('lib/scss/**/*.scss', ['sass']);
+	gulp.watch(paths.src + '/lib/js/app/**/*.js', ['lint', 'appscripts']);
+	gulp.watch(paths.src + '/lib/scss/**/*.scss', ['sass']);
 });
 
 // Static Server + watching scss/html files
 gulp.task('serve', ['sass', 'appscripts'], function () {
 	browserSync({
-		server: "./"
+		server: './' + paths.src + '/'
 	});
-	gulp.watch("lib/js/app/**/*.js", ['appscripts']);
-	gulp.watch("lib/scss/**/*.scss", ['sass']);
-	gulp.watch("./*.html").on('change', reload);
+	gulp.watch(paths.src + '/lib/js/app/**/*.js', ['appscripts']);
+	gulp.watch(paths.src + '/lib/scss/**/*.scss', ['sass']);
+	gulp.watch(paths.src + '/**/*.html').on('change', reload);
 });
 
 // clean dist folder
 gulp.task('clean', function () {
-	return gulp.src('dist/**/*', {
+	return gulp.src(paths.dist + '/**/*', {
 			read: false,
 			force: true
 		})
@@ -82,15 +88,17 @@ gulp.task('clean', function () {
 
 // deploy app artifact
 gulp.task('dist', ['clean'], function () {
-	gulp.src('index.html').pipe(gulp.dest('dist'));
-	gulp.src('lib/css/**/*.css').pipe(gulp.dest('dist/lib/css'));
-	gulp.src('lib/js/*.min.js').pipe(gulp.dest('dist/lib/js'));
-	gulp.src('lib/font/**/*').pipe(gulp.dest('dist/lib/font'));
-	gulp.src('lib/icon/**/*').pipe(gulp.dest('dist/lib/icon'));
-	gulp.src('lib/img/**/*').pipe(gulp.dest('dist/lib/img'));
+	gulp.src(paths.src + '/**/*.html').pipe(gulp.dest(paths.dist));
+	gulp.src(paths.src + '/apple-touch-icon-precomposed.png').pipe(gulp.dest(paths.dist));
+	gulp.src(paths.src + '/favicon.png').pipe(gulp.dest(paths.dist));
+	gulp.src(paths.src + '/lib/css/**/*.css').pipe(gulp.dest(paths.dist + '/lib/css'));
+	gulp.src(paths.src + '/lib/js/*.min.js').pipe(gulp.dest(paths.dist + '/lib/js'));
+	gulp.src(paths.src + '/lib/font/**/*').pipe(gulp.dest(paths.dist + '/lib/font'));
+	gulp.src(paths.src + '/lib/icon/**/*').pipe(gulp.dest(paths.dist + '/lib/icon'));
+	gulp.src(paths.src + '/lib/img/**/*').pipe(gulp.dest(paths.dist + '/lib/img'));
 });
 
-// Dev Tasks
+// Develop with existing server, not using browser sync
 gulp.task('dev', ['sass', 'lint', 'appscripts', 'watch']);
 
 // Build Tasks

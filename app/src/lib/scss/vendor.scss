@@ -1,0 +1,14 @@
+/*
+# Vendors (3rd party styles)
+* This file includes all 3rd party CSS libraries without customisation
+*/
+
+// reset
+@import "vendor/_normalize.scss";
+
+// Foundation by ZURB
+@import "vendor/_foundation.scss";
+
+// third-party
+@import "vendor/_jquery.fullpage.scss";
+@import "vendor/_jquery.dynatable.scss";

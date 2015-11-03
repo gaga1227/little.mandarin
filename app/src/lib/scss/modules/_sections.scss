@@ -1,0 +1,36 @@
+/*
+# Sections
+** section blocks **
+*/
+
+// default (transparent)
+// -------------------------------------------------------------------------------------------
+
+.section {
+	min-width: $section-min-width;
+	max-width: $section-max-width;
+
+	// cancel width limits for child sections
+	.section {
+		min-width: 0;
+		max-width: none;
+	}
+
+	// common
+	&,
+	>.padder {
+		display: block;
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 0 auto;
+		padding: 0;
+		overflow: hidden;
+	}
+
+	// variants
+	&.marble {
+		background: $marble url('../img/bg-marble.jpg') center no-repeat;
+		background-size: cover;
+	}
+}
