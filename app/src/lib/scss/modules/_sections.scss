@@ -7,18 +7,9 @@
 // -------------------------------------------------------------------------------------------
 
 .section {
-	min-width: $section-min-width;
-	max-width: $section-max-width;
-
-	// cancel width limits for child sections
-	.section {
-		min-width: 0;
-		max-width: none;
-	}
-
 	// common
 	&,
-	>.padder {
+	.padder {
 		display: block;
 		position: relative;
 		width: auto;
@@ -28,9 +19,25 @@
 		overflow: hidden;
 	}
 
+	// padder
+	.padder {
+		max-width: $max-content-width;
+	}
+
 	// variants
 	&.marble {
-		background: $marble url('../img/bg-marble.jpg') center no-repeat;
+		background: $lm-marble url('../img/bg-marble.jpg') center no-repeat;
 		background-size: cover;
+	}
+}
+
+// section home
+// -------------------------------------------------------------------------------------------
+
+#section-home {
+	//heading
+	h1 {
+		font-size: 64px;
+		text-transform: uppercase;
 	}
 }

@@ -1,0 +1,23 @@
+/*
+# App Layout Scaffolding
+*/
+
+// body
+html, body {
+	display: block;
+	width: auto;
+	height: auto;
+	min-height: 100%;
+	margin: 0;
+}
+
+// page container
+#container {
+	display: block;
+	position: relative;
+	width: auto;
+	height: auto;
+	min-width: $min-content-width;
+	overflow: hidden;
+}
+

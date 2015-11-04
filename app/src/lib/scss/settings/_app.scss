@@ -27,15 +27,19 @@ $oil         : #333333;
 $jet         : #222222;
 $black       : #000000;
 
-// app
-$marble: #d9dade;
+// brand pallet
+$lm-marble: #d9dade; //light bg
+$lm-tea: #404041; //dark bg
+$lm-gold: #c39963; //gold highlight
+
 
 // Layout and scaffolding
 // -------------------------------------------------------------------------------------------
 
-// section
-$section-min-width: 320px;
-$section-max-width: none;
+// content width limits
+$min-content-width: 320px;
+$max-content-width: 650px;
+
 
 // Transition and Animations
 // -------------------------------------------------------------------------------------------

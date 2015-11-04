@@ -3,4 +3,60 @@
 ** basic type module styles **
 */
 
+// vars
+// -------------------------------------------------------------------------------------------
+
+// font family
+$font-sans-serif: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$font-brand: "Nemesia", Helvetica, Arial, sans-serif;
+$font-zh: "PingHei", Helvetica, Arial, sans-serif;
+
+
+// global
+// -------------------------------------------------------------------------------------------
+
+body {
+	font-family: $font-sans-serif;
+}
+html[lang="zh-CN"] body {
+	font-family: $font-zh;
+}
+
+
+// headings
+// -------------------------------------------------------------------------------------------
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	color: $lm-tea;
+	font-family: $font-brand;
+	font-weight: 600;
+}
+
+// chinese
+html[lang="zh-CN"] {
+	h1, .h1,
+	h2, .h2,
+	h3, .h3,
+	h4, .h4,
+	h5, .h5,
+	h6, .h6 {
+		font-family: $font-zh;
+		font-weight: 300;
+	}
+}
+
+// shortcuts
+// -------------------------------------------------------------------------------------------
+
+.font-brand { font-family: $font-brand!important; }
+.font-zh, html[lang="zh-CN"] .font-brand { font-family: $font-zh!important; }
+
+
+
+
 

@@ -1,7 +1,10 @@
 /*
-# Main navigation
-**  **
+# Main Navigation
+** Responsive site navigation **
 */
+
+// container
+// -------------------------------------------------------------------------------------------
 
 #nav {
 	display: block;
@@ -10,14 +13,77 @@
 	left: 0;
 	width: 100%;
 	height: auto;
+	text-align: center;
 	z-index: 100;
 
-	// logo
-	.brand-logo {
-		display: block;
-		margin: 10vh auto;
-		width: 200px;
-		height: auto;
+	// nav item
+	.navItem {
+		display: inline-block;
+		min-width: 120px;
+		color: $lm-gold;
+		font-family: $font-brand;
+		font-size: 24px;
+		font-weight: 600;
+		vertical-align: middle;
+		text-transform: uppercase;
+		text-decoration: none!important;
+		@include transition(color);
+
+		// interaction
+		html.no-touch &:hover,
+		html.no-touch &:focus,
+		html.touch &:active {
+			color: $lm-tea;
+		}
+
+		// brand logo
+		&.brand-logo {
+			width: 80px;
+			height: auto;
+			min-width: 0;
+			margin: 2.5%;
+			color: transparent;
+			font-size: 0;
+			text-decoration: none!important;
+			cursor: pointer!important;
+			@include transition(transform);
+
+			// interaction
+			html.no-touch &:hover,
+			html.no-touch &:focus,
+			html.touch &:active {
+				@include transform(scale(1.1));
+			}
+		}
 	}
 }
 
+// chinese
+html[lang="zh-CN"] {
+	#nav .navItem {
+		font-family: $font-zh;
+	}
+}
+
+// home section version
+// -------------------------------------------------------------------------------------------
+
+body.fp-viewing-home {
+	#nav {
+		// brand logo
+		.navItem.brand-logo {
+			width: 80px;
+			margin: 2.5%;
+			pointer-events: none!important;
+			cursor: default!important;
+			@include transition(none);
+
+			// interaction
+			html.no-touch &:hover,
+			html.no-touch &:focus,
+			html.touch &:active {
+				@include transform(scale(1));
+			}
+		}
+	}
+}

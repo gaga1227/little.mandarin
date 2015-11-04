@@ -3,6 +3,20 @@
 ** common helpers **
 */
 
+// colors
+// -------------------------------------------------------------------------------------------
+
+// text color
+.lm-c-marble { color: $lm-marble!important; }
+.lm-c-tea { color: $lm-tea!important; }
+.lm-c-gold { color: $lm-gold!important; }
+
+// bg color
+.lm-bgc-marble { background-color: $lm-marble!important; }
+.lm-bgc-tea { background-color: $lm-tea!important; }
+.lm-bgc-gold { background-color: $lm-gold!important; }
+
+
 // image replacement
 .ir {
 	@include ir();

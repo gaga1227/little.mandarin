@@ -29,35 +29,53 @@
 </head>
 <body>
 
-<!-- NAV -->
-<div id="nav">
-	<img class="brand-logo" src="lib/img/brand-logo.png" width="300" height="300" title="Little Mandarin Yoga" alt="Little Mandarin Yoga Brand Logo">
-</div><!-- /NAV -->
+<!-- CONTAINER -->
+<div id="container">
 
-<!-- MAIN -->
-<div id="fullpage" class="text-center">
-	<div class="section marble">
-		<h1>Coming soon.</h1>
-		<p>pre-registration available now</p>
-	</div>
-	<div class="section">
-		<h2>Location</h2>
-		<p>121 MORAY STREET SOUTH MELBOURNE, VIC, 3205 AUSTRALIA</p>
-		<p><b>Tel: </b>03 9898 8888</p>
-		<p><b>Fax: </b>03 9158 5188</p>
-		<p><b>Mobile: </b>0416 318 418</p>
-		<p>Google map stuff ...</p>
-	</div>
-	<div class="section marble">
-		<h2>Pre-registration</h2>
-		<p>forms stuff ...</p>
-	</div>
-</div><!-- /MAIN -->
+	<!-- NAV -->
+	<div id="nav">
+		<a href="#about" class="navItem"><span>About</span></a>
+		<a href="https://clients.mindbodyonline.com/classic/home?studioid=283735" target="_blank" class="navItem"><span>Join</span></a>
+		<img class="navItem brand-logo" src="lib/img/brand-logo.png" width="300" height="300" title="Little Mandarin Yoga" alt="Little Mandarin Yoga Brand Logo">
+		<a href="#location" class="navItem"><span>Location</span></a>
+		<a href="index.zh.html" class="navItem font-zh"><span>中文</span></a>
+	</div><!-- /NAV -->
 
-<!-- TEMPLATE: MESSAGE -->
+	<!-- MAIN -->
+	<div id="main">
+		<!-- FULLPAGE -->
+		<div id="fullpage" class="text-center">
+			<div class="section marble" id="section-home">
+				<div class="padder">
+					<h1 class="heading">Little Mandarin Yoga</h1>
+					<p><b>The first and only boutique bi-lingual yoga studio<br>featuring both English and Chinese.</b></p>
+				</div>
+			</div>
+			<div class="section" id="section-about">
+				<div class="padder">
+					<h1>About</h1>
+					<p>Content ...</p>
+				</div>
+			</div>
+			<div class="section marble" id="section-location">
+				<div class="padder">
+					<h1>Location</h1>
+					<p>121 MORAY STREET SOUTH MELBOURNE, VIC, 3205 AUSTRALIA</p>
+					<p><b>Tel: </b>03 9898 8888</p>
+					<p><b>Fax: </b>03 9158 5188</p>
+					<p><b>Mobile: </b>0416 318 418</p>
+					<p>Google map stuff ...</p>
+				</div>
+			</div>
+		</div><!-- /FULLPAGE -->
+	</div><!-- /MAIN -->
+
+</div><!-- /CONTAINER -->
+
+<!-- TEMPLATE: MESSAGE
 <script id="template-message" type="text/x-template">
 <div id="template"></div>
-</script>
+</script> -->
 
 <!-- JS:APP -->
 <script src="lib/js/app.min.js"></script>
@@ -65,7 +83,16 @@
 <!-- JS:CUSTOM -->
 <script>
 $(document).ready(function() {
-	$('#fullpage').fullpage();
+	$('#fullpage').fullpage({
+		anchors: ['home', 'about', 'location'],
+		css3: true,
+		navigation: true,
+		navigationPosition: 'right'
+	});
+	$('#nav').find('.brand-logo').click(function(e){
+		e.preventDefault();
+		$.fn.fullpage.moveTo(1);
+	});
 });
 </script>
 </body>

@@ -7,12 +7,12 @@
 @import "settings/ios7colors";
 @import "settings/pennerseasings";
 @import "settings/app";
-@import "settings/fonts";
 
 // functions
 @import "utils/mixins";
 
 // UI modules
+@import "modules/fonts";
 @import "modules/icons";
 @import "modules/arrows";
 @import "modules/typography";
@@ -24,7 +24,7 @@
 @import "modules/animations";
 
 // views
-@import "views/body";
+@import "views/scaffolding";
 @import "views/nav";
 
 // helpers / overrides
