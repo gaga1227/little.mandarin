@@ -33,13 +33,26 @@
 <div id="container">
 
 	<!-- NAV -->
-	<div id="nav">
-		<a href="#about" class="navItem"><span>About</span></a>
-		<a href="https://clients.mindbodyonline.com/classic/home?studioid=283735" target="_blank" class="navItem"><span>Join</span></a>
-		<img class="navItem brand-logo" src="lib/img/brand-logo.png" width="300" height="300" title="Little Mandarin Yoga" alt="Little Mandarin Yoga Brand Logo">
-		<a href="#location" class="navItem"><span>Location</span></a>
-		<a href="index.zh.html" class="navItem font-zh"><span>中文</span></a>
-	</div><!-- /NAV -->
+	<ul id="nav">
+		<li data-menuanchor="home">
+			<a class="navItem" href="#home"><span>Home</span></a>
+		</li>
+		<li data-menuanchor="about">
+			<a class="navItem" href="#about"><span>About</span></a>
+		</li>
+		<li>
+			<a class="navItem" href="https://clients.mindbodyonline.com/classic/home?studioid=283735" target="_blank"><span>Join</span></a>
+		</li>
+		<li>
+			<img class="navItem brand-logo" src="lib/img/brand-logo.png" width="300" height="300" title="Little Mandarin Yoga" alt="Little Mandarin Yoga Brand Logo">
+		</li>
+		<li data-menuanchor="location">
+			<a class="navItem" href="#location"><span>Location</span></a>
+		</li>
+		<li>
+			<a class="navItem font-zh" href="index.zh.html"><span>中文</span></a>
+		</li>
+	</ul><!-- /NAV -->
 
 	<!-- MAIN -->
 	<div id="main">
@@ -83,16 +96,7 @@
 <!-- JS:CUSTOM -->
 <script>
 $(document).ready(function() {
-	$('#fullpage').fullpage({
-		anchors: ['home', 'about', 'location'],
-		css3: true,
-		navigation: true,
-		navigationPosition: 'right'
-	});
-	$('#nav').find('.brand-logo').click(function(e){
-		e.preventDefault();
-		$.fn.fullpage.moveTo(1);
-	});
+
 });
 </script>
 </body>

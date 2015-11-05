@@ -33,6 +33,16 @@ $lm-tea: #404041; //dark bg
 $lm-gold: #c39963; //gold highlight
 
 
+// Typography
+// -------------------------------------------------------------------------------------------
+
+// font family
+$font-base-sans-serif: Helvetica, Arial, sans-serif;
+$font-sans-serif: 'Helvetica Neue', 'Helvetica', #{$font-base-sans-serif};
+$font-brand: 'Nemesia', #{$font-base-sans-serif};
+$font-zh: 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', #{$font-base-sans-serif};
+
+
 // Layout and scaffolding
 // -------------------------------------------------------------------------------------------
 

@@ -42,6 +42,6 @@ $font-path: '../font/';
 @include add-font-face(nemesia-italic, Nemesia, 400, italic);
 
 // Ping Hei
-@include add-font-face(PingHei-light, PingHei, 400);
-@include add-font-face(PingHei-bold, PingHei, 600);
+// @include add-font-face(PingHei-light, PingHei, 400);
+// @include add-font-face(PingHei-bold, PingHei, 600);
 
