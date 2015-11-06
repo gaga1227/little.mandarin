@@ -27,6 +27,11 @@ h6, .h6 {
 	font-family: $font-brand;
 	font-weight: 600;
 }
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+	font-weight: 300;
+}
 
 // chinese
 html[lang="zh-CN"] {

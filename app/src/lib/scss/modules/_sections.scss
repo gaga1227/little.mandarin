@@ -19,9 +19,23 @@
 		overflow: hidden;
 	}
 
+	// bg image
+	.bg-image {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		padding: 0;
+		overflow: hidden;
+	}
+
 	// padder
 	.padder {
 		max-width: $max-content-width;
+		padding: 5%;
 	}
 
 	// variants
@@ -35,8 +49,68 @@
 // -------------------------------------------------------------------------------------------
 
 #section-home {
-	//heading
-	h1 {
+	// bg
+	.bg-image {
+		background: transparent url('../img/bg-home.jpg') center no-repeat;
+		background-size: cover;
+		opacity: 0.4;
+	}
+
+	// big brand
+	.big-brand {
+		display: block;
+		position: relative;
+		color: $lm-gold;
+		font-size: 10px;
+		width: 30em;
+		height: 30em;
+		margin: 0 auto;
+		background: $lm-tea;
+		border-radius: 50%;
+		overflow: hidden;
+		border: 0.5em solid $lm-gold;
+
+		.brand-logo {
+			display: block;
+			width: auto;
+			height: 50%;
+			margin: 12% auto 0 auto;
+		}
+
+		.brand-title {
+			display: block;
+			margin-top: 5%;
+			font-size: 2em;
+			font-weight: 300;
+			line-height: 1.5em;
+			letter-spacing: 0.25em;
+			text-transform: uppercase;
+		}
+	}
+
+	// sub heading
+	.sub-heading {
+		margin: 2em 0 0 0;
+		font-family: $font-sans-serif;
+		font-size: 14px;
+		line-height: 1.6em;
 		text-transform: uppercase;
+		font-weight: 300;
+	}
+}
+
+// responsive
+// -------------------------------------------------------------------------------------------
+
+// big brand
+@media only screen and (max-width:400px) {
+	#section-home {
+		.big-brand {
+			width: 22em;
+			height: 22em;
+			.brand-title {
+				font-size: 14px;
+			}
+		}
 	}
 }
