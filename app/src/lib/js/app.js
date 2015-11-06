@@ -133,6 +133,7 @@ window.App = (function (app) {
 		// -------------------------------------------------------------------------------------------
 
 		init: function () {
+			// init fullpage
 			$('#fullpage').fullpage({
 				anchors: ['home', 'about', 'location'],
 				menu: '#nav',
@@ -142,10 +143,29 @@ window.App = (function (app) {
 				fitToSection: true
 				// responsiveWidth: 1000
 			});
-			$('#nav').find('.brand-logo').click(function (e) {
-				e.preventDefault();
-				$.fn.fullpage.moveTo(1);
-			});
+
+			// init logo button
+			$('#nav').find('.brand-logo')
+				.off('click')
+				.on('click', function (e) {
+					e.preventDefault();
+					$.fn.fullpage.moveTo(1);
+				});
+
+			// init mobile nav trigger
+			$('#nav-trigger')
+				.off('click')
+				.on('click', function (e) {
+					e.preventDefault();
+					$('#nav').toggleClass('activated');
+				});
+
+			// init nav items closing nav
+			$('#nav').find('.navItem')
+				.off('click.closeNav')
+				.on('click.closeNav', function (e) {
+					$('#nav').removeClass('activated');
+				});
 		}
 	};
 
