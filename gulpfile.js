@@ -95,7 +95,7 @@ gulp.task('dist', ['clean'], function () {
 	gulp.src(paths.src + '/lib/js/*.min.js').pipe(gulp.dest(paths.dist + '/lib/js'));
 	gulp.src(paths.src + '/lib/font/**/*').pipe(gulp.dest(paths.dist + '/lib/font'));
 	gulp.src(paths.src + '/lib/icon/**/*').pipe(gulp.dest(paths.dist + '/lib/icon'));
-	gulp.src(paths.src + '/lib/img/**/*').pipe(gulp.dest(paths.dist + '/lib/img'));
+	gulp.src([paths.src + '/lib/img/**/*', '!**/*.psd', '!**/*.ai']).pipe(gulp.dest(paths.dist + '/lib/img'));
 });
 
 // Develop with existing server, not using browser sync
