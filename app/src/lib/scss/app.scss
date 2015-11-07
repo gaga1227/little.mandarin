@@ -22,10 +22,12 @@
 @import "modules/effects";
 @import "modules/patterns";
 @import "modules/animations";
+@import "modules/overrides";
 
 // views
 @import "views/scaffolding";
 @import "views/nav";
+@import "views/map";
 
 // helpers / overrides
 @import "utils/helpers";

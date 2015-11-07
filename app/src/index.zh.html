@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="format-detection" content="telephone=no">
 <!-- TITLE -->
-<title>Little Mandarin 瑜伽馆</title>
+<title>Little Mandarin 瑜伽会馆</title>
 <!-- ICONS -->
 <link rel="shortcut icon" href="favicon.png">
 <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png">
@@ -36,8 +36,8 @@
 	<div id="nav-trigger" class="icon ion-android-menu"></div>
 
 	<!-- NAV -->
-	<ul id="nav">
-		<div id="navWrapper">
+	<div id="nav">
+		<ul id="navWrapper">
 			<li data-menuanchor="home">
 				<a class="navItem" href="#home"><span>回到首页</span></a>
 			</li>
@@ -56,37 +56,48 @@
 			<li>
 				<a class="navItem" href="index.html"><span>English</span></a>
 			</li>
-		</div>
-	</ul><!-- /NAV -->
+		</ul>
+
+		<!-- CLOSE BTN -->
+		<div id="nav-close" class="icon ion-arrow-up-c"><span class="label font-zh">关闭菜单</span></div>
+	</div><!-- /NAV -->
 
 	<!-- MAIN -->
 	<div id="main">
 		<!-- FULLPAGE -->
 		<div id="fullpage" class="text-center">
-			<div class="section marble" id="section-home">
+			<div class="section" id="section-home">
 				<div class="bg-image"></div>
 				<div class="padder">
 					<h1 class="big-brand">
 						<img class="brand-logo" src="lib/img/brand-logo.svg" width="100" height="140" title="" alt="">
-						<span class="brand-title font-zh">小菊<br>瑜伽会馆</span>
+						<span class="brand-title font-zh">Little Mandarin<br>瑜伽会馆</span>
 					</h1>
 					<h2 class="sub-heading font-zh">墨尔本独一无二的中英双语教学瑜伽会馆</h2>
 				</div>
 			</div>
 			<div class="section" id="section-about">
 				<div class="padder">
-					<h1>会馆简介</h1>
-					<p>...</p>
+					<h1 class="section-heading">会馆简介</h1>
+					<div class="row">
+						<div class="column all-12">
+							<p>由驰名中外的瑜伽星级大师张琼创办和主教的<b>墨尔本 Little Mandarin 瑜伽会馆</b>位于South Melbourne, 首创双语教学。</p>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="section marble" id="section-location">
-				<div class="padder">
-					<h1>会馆地址</h1>
-					<p>121 MORAY STREET SOUTH MELBOURNE, VIC, 3205 AUSTRALIA</p>
-					<p><b>电话: </b>03 9898 8888</p>
-					<p><b>传真: </b>03 9158 5188</p>
-					<p><b>手机: </b>0416 318 418</p>
-					<p>Google map stuff ...</p>
+			<div class="section" id="section-location">
+				<div class="padder full-width">
+					<h1 class="section-heading bg-peel">会馆地址</h1>
+					<!-- MAP LINK -->
+					<a href="http://maps.apple.com/?daddr=121+Moray+St,+South+Melbourne+VIC+3205,+Australia" target="_blank">
+						<!-- ADDRESS -->
+						<div class="location-address font-brand">121 Moray Street, South Melbourne, VIC 3205</div>
+						<!-- MAP -->
+						<div class="location-map">
+							<div class="map-view"></div>
+						</div>
+					</a>
 				</div>
 			</div>
 		</div><!-- /FULLPAGE -->

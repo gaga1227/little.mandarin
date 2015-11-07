@@ -140,7 +140,10 @@ window.App = (function (app) {
 				css3: true,
 				navigation: true,
 				navigationPosition: 'right',
-				fitToSection: true
+				fitToSection: true,
+				afterRender: function () {
+					$('body').addClass('fp-ready');
+				}
 				// responsiveWidth: 1000
 			});
 
@@ -161,7 +164,7 @@ window.App = (function (app) {
 				});
 
 			// init nav items closing nav
-			$('#nav').find('.navItem')
+			$('#nav').find('.navItem').add('#nav-close')
 				.off('click.closeNav')
 				.on('click.closeNav', function (e) {
 					$('#nav').removeClass('activated');

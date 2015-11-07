@@ -35,7 +35,6 @@
 
 #nav {
 	display: block;
-	list-style: none;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -45,6 +44,13 @@
 	padding: 0;
 	text-align: center;
 	z-index: 200;
+
+	// wrapper
+	#navWrapper {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
 
 	// item container
 	li {
@@ -122,6 +128,35 @@
 			margin-top: -0.2em;
 		}
 	}
+
+	// mobile close
+	#nav-close {
+		display: none;
+		position: absolute;
+		width: 100%;
+		bottom: 20px;
+		left: 50%;
+		margin: 0 0 0 -50%;
+		color: $lm-leaf;
+
+		// icon
+		&:before {
+			font-size: 32px;
+		}
+
+		// text
+		.label {
+			display: block;
+			color: inherit;
+			font-size: 14px;
+			background: none;
+		}
+
+		// interaction
+		html.touch &:active {
+			color: $white;
+		}
+	}
 }
 
 // chinese
@@ -193,6 +228,11 @@ body.fp-viewing-home {
 		@include will-change(height);
 		@include transition(height, $container-transition-duration);
 
+		// mobile close
+		#nav-close {
+			display: block;
+		}
+
 		// wrapper
 		#navWrapper {
 			width: 0;
@@ -228,7 +268,7 @@ body.fp-viewing-home {
 		.navItem {
 			padding: 5% 0;
 			min-width: 0!important;
-			color: $lm-gold;
+			color: $lm-peel;
 			font-size: 24px!important;
 			line-height: 1em;
 			text-shadow: none;
@@ -238,7 +278,7 @@ body.fp-viewing-home {
 			html.no-touch &:focus,
 			html.touch &:active {
 				color: $lm-tea;
-				background: $lm-gold;
+				background: $lm-peel url('../img/bg-peel.png') center repeat;
 			}
 
 			// hide brand
@@ -251,7 +291,7 @@ body.fp-viewing-home {
 		li.active {
 			.navItem {
 				color: $lm-tea;
-				background: $lm-gold;
+				background: $lm-peel url('../img/bg-peel.png') center repeat;
 			}
 		}
 

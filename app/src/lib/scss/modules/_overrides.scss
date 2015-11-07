@@ -1,0 +1,14 @@
+/*
+# Overrides
+** Overrides for plugins and etc. **
+*/
+
+// fullpage.js
+// -------------------------------------------------------------------------------------------
+
+// move paging dots to the edge
+@media only screen and (max-width:650px) {
+	#fp-nav.right {
+		right: 5px;
+	}
+}

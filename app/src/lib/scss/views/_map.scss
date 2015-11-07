@@ -1,0 +1,23 @@
+/*
+# Map view
+** Google map view **
+*/
+
+// map view
+// -------------------------------------------------------------------------------------------
+
+.map-view {
+	min-height: 360px;
+	background: red url('../img/img-map.png') center no-repeat;
+	background-size: cover;
+}
+
+// responsive
+// -------------------------------------------------------------------------------------------
+
+// reduce height
+@media only screen and (max-width:450px) {
+	.map-view {
+		min-height: 240px;
+	}
+}

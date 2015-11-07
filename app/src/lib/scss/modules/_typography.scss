@@ -46,6 +46,34 @@ html[lang="zh-CN"] {
 	}
 }
 
+// section headings
+.section-heading {
+	width: 5em;
+	height: 5em;
+	margin: 0 auto 1em auto;
+	color: $white;
+	background: $lm-leaf url('../img/bg-leaf.png') center repeat;
+	border-radius: 50%;
+	line-height: 5em;
+	@include text-truncate();
+
+	&.bg-peel {
+		background: $lm-peel url('../img/bg-peel.png') center repeat;
+	}
+}
+
+
+// Responsive
+// -------------------------------------------------------------------------------------------
+
+@media only screen and (max-width:650px) {
+	// smaller title
+	.section-heading {
+		font-size: 20px;
+	}
+}
+
+
 // shortcuts
 // -------------------------------------------------------------------------------------------
 
