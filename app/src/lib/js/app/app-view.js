@@ -24,7 +24,7 @@ window.App = (function (app) {
 		init: function () {
 			// init fullpage
 			$('#fullpage').fullpage({
-				anchors: ['home', 'about', 'location'],
+				anchors: ['home', 'about', 'location', 'footer'],
 				menu: '#nav',
 				css3: true,
 				navigation: true,
