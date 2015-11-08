@@ -29,11 +29,10 @@ window.App = (function (app) {
 				css3: true,
 				navigation: true,
 				navigationPosition: 'right',
-				fitToSection: true,
+				responsiveWidth: 650,
 				afterRender: function () {
 					$('body').addClass('fp-ready');
 				}
-				// responsiveWidth: 1000
 			});
 
 			// init logo button

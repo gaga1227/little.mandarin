@@ -8,7 +8,7 @@
 
 #nav-trigger {
 	display: none;
-	position: absolute;
+	position: fixed;
 	top: 20px;
 	left: 20px;
 	width: 1.6em;
@@ -35,7 +35,7 @@
 
 #nav {
 	display: block;
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -138,6 +138,7 @@
 		left: 50%;
 		margin: 0 0 0 -50%;
 		color: $lm-leaf;
+		cursor: pointer;
 
 		// icon
 		&:before {
@@ -147,14 +148,16 @@
 		// text
 		.label {
 			display: block;
+			padding: 0;
 			color: inherit;
-			font-size: 14px;
+			font-size: 12px;
 			background: none;
+			text-transform: uppercase;
 		}
 
 		// interaction
 		html.touch &:active {
-			color: $white;
+			color: $lm-gold;
 		}
 	}
 }
@@ -218,7 +221,6 @@ body.fp-viewing-home {
 
 	// re-design nav menu
 	#nav {
-		position: fixed;
 		// vcenter align contents
 		@include flexbox();
 		@include align-items(center);

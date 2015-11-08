@@ -130,8 +130,46 @@
 	}
 }
 
+// section footer
+// -------------------------------------------------------------------------------------------
+
+#section-footer {
+	background: $lm-tea;
+	font-size: 13px;
+	color: $lm-gold;
+	.padder {
+		padding: 1em 0;
+	}
+	span.info {
+		display: inline-block;
+		margin: 0 1em;
+	}
+	a {
+		color: $lm-gold!important;
+		html.no-touch &:hover,
+		html.no-touch &:focus,
+		html.touch &:active {
+			text-decoration: underline;
+		}
+	}
+}
+
 // responsive
 // -------------------------------------------------------------------------------------------
+
+@media only screen and (max-width:750px) {
+	// stack footer content
+	#section-footer {
+		span.info {
+			display: block;
+			margin: 0.2em auto;
+			&.copyright {
+				margin-bottom: 0.8em;
+				font-size: 14px;
+			}
+		}
+	}
+}
 
 @media only screen and (max-width:450px) {
 	// smaller for mobile
